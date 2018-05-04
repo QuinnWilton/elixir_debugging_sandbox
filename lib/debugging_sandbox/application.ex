@@ -8,7 +8,8 @@ defmodule DebuggingSandbox.Application do
 
     children = [
       DebuggingSandbox.RingBuffer.Supervisor,
-      {DebuggingSandbox.SecretState, [secret_state_flag]}
+      {DebuggingSandbox.SecretState, [secret_state_flag]},
+      DebuggingSandbox.TraceMe
     ]
 
     opts = [strategy: :one_for_one, name: DebuggingSandbox.Supervisor]
