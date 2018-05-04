@@ -1,18 +1,11 @@
 defmodule DebuggingSandbox do
-  @moduledoc """
-  Documentation for DebuggingSandbox.
-  """
+  @moduledoc false
 
-  @doc """
-  Hello world.
+  def initialize_ring_buffer do
+    flag = System.get_env("RING_BUFFER_FLAG")
 
-  ## Examples
+    send :alice, flag
 
-      iex> DebuggingSandbox.hello
-      :world
-
-  """
-  def hello do
-    :world
+    :ok
   end
 end
